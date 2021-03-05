@@ -56,7 +56,12 @@ console.log("The doubled numbers are: ",  doubleOddNumber); // returns [ 2, 6 ]
 // const myNumbers = [1, 2, 3, 4];
 // console.log(doubleOddNumbers(myNumbers)); // prints [ 2, 6 ]
 
+// 4th method in one line::>
 
+// function doubleOddNumbers(numbers) {
+//return numbers.filter(number => number % 2 !== 0).map(number => number * 2);
+ // const myNumbers = [1, 2, 3, 4];
+// console.log(doubleOddNumbers(myNumbers));
 
 
 
