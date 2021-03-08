@@ -2,6 +2,8 @@
  * 1.1 Say you would like to write a program that doubles the odd numbers
  *  in an array and throws away the even numbers.
  */
+
+
  const myNumbers = [1, 2, 3, 4];
 
  let doublesOddNumbers = myNumbers
@@ -11,7 +13,8 @@
    console.log(doublesOddNumbers); // prints [2, 6]
 
 
-/*
+/*  various ways to do this HW.
+
 Your solution could be something like this:
 
 function doubleOddNumbers(numbers) {
