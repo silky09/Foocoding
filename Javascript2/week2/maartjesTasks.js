@@ -1,23 +1,3 @@
-/**
- * Write a program that computes how much Maartje has earned by completing these tasks, using map and filter. For the 'summing part' you can try your luck with reduce; alternatively, you may use forEach or a for loop.
-
-Follow these steps. Each step should build on the result of the previous step.
-
-* Map the tasks to durations in hours.
-
-* Filter out everything that took less than two hours (i.e., remove from the collection)
-
-* Multiply the each duration by a per-hour rate for billing (use €20/hour) and sum it all up.
-
-* Output a formatted Euro amount, rounded to Euro cents, e.g: €11.34.
-
-* Choose variable and parameters names that most accurately describe their contents or purpose.
- When naming an array, use a plural form, e.g. durations.
- For a single item, use a singular form, e.g. duration. For details, see Naming Conventions.
-
-* Don't forget to use =>.
- */
-
 
 // Maartje's work:
 
@@ -65,40 +45,53 @@ const tuesday = [
   }
 ];
 
-//Write a program that computes how much Maartje has earned by completing these tasks, 
+//Write a program that computes how much Maartje has earned by 
+//completing these tasks,
 // using map and filter method.
 
-/**
-* Map the tasks to durations in hours.
+// const totalTasks = [...monday, ...tuesday];
+// console.log(totalTasks);
+
+// const payHourRate = 20;
+
+// // other way to use "concat" method
+// // The concat() method is used to join two or more arrays.
+
+// //const totalTasks = monday.concat(tuesday);
+ 
+// // 1. Map the tasks to durations in hours.
+
+// let durationInHour = totalTasks.map(i => i.duration / 60);
+// console.log(durationInHour);
   
-*  Filter out everything that took less than two hours (i.e., remove from the collection)
 
-*  Multiply the each duration by a per-hour rate for billing (use €20/hour) and sum it all up.
+// // 2.  Filter out everything that took less than two hours(i.e., remove from the collection)
+// let moreThanTwoHours = durationInHour.filter(i => i >= 2);
+// console.log(moreThanTwoHours); // prints  [3, 2, 3]
 
-*  Output a formatted Euro amount, rounded to Euro cents, e.g: €11.34.
 
-*  Choose variable and parameters names that most accurately describe their contents or purpose. When naming an array, use a plural form, e.g. durations. For a single item, use a singular form,
- e.g. duration. For details, see Naming Conventions.
-*  Don't forget to use =>.
- */
+// // 3.  Multiply the each duration by a per-hour rate for billing (use €20/hour) and sum it all up.
 
-// const totalEarned = monday.map(function (total) {
-//   let hours = (total.duration) / 60;
-//   //console.log(hours);
-//   let hours1 = Math.floor(hours);
-//   return hours1;
-  
-// });
-// console.log(totalEarned); // prints  [ 3, 2, 0, 0 ]
+// let multiplyDuration = moreThanTwoHours.map(i => i * payHourRate);
+// console.log(multiplyDuration); // [60, 40, 60]
+
+
+// // 4.  Output a formatted Euro amount, rounded to Euro cents, e.g: €11.34.
+
+ 
+// let totalSumUp = multiplyDuration.reduce((total, currentValue) => total + currentValue);
+// console.log(totalSumUp); // 160 
+
+// let result = totalSumUp.toFixed(2); // to fixed is used to rounded to Euro cents like .00(2), .000(3)
+// console.log(result); // 160.00
 
 //-------------------------------------------------------------
 
-// The concat() method is used to join two or more arrays.
 
-const maartjesTasks = monday.concat(tuesday);
-//console.log(maartjesTasks);
 
-const maartjesHourlyRate = 20;
+
+
+
 /**
 ┌─────────┬────────────────────────────────────────────────┬──────────┐
 │ (index) │                      name                      │ duration │
@@ -115,27 +108,18 @@ const maartjesHourlyRate = 20;
 └─────────┴────────────────────────────────────────────────┴──────────┘
  */
 
+// short method:::> 
 
+const totalTasks = [...monday, ...tuesday];
+console.log(totalTasks);
 
-function computeEarnings(tasks, hourlyRate) {
-  // Replace this comment and the next line with your code
-  const taskRate = tasks
-    .map(task => task.duration / 60) // map duration in hours
-    .filter(duration => duration >= 2)   //remove the duration, that is < 2 hours
-    .map(duration => duration * hourlyRate) //multiply each duration per hour (rate =20)
-    .reduce((total, value) => total + value) // Total sum all
-    return taskRate;
+const payHourRate = 20;
 
-}
+let finalResult = totalTasks
+  .map(i => i.duration/ 60)
+  .filter(i => i >= 2)
+  .map(i => i * payHourRate)
+  .reduce((total, currentValue) => total + currentValue) // prints 160
+  .toFixed(2)
 
-const earnings = computeEarnings(maartjesTasks, maartjesHourlyRate).toFixed(2);
-
-console.log(`Maartje has earned €${earnings}`);
-
-
-module.exports = {
-  maartjesTasks,
-
-  maartjesHourlyRate,
-  computeEarnings,
-};
+  console.log(finalResult); // prints 160.00
