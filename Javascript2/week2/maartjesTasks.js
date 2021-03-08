@@ -120,7 +120,7 @@ let finalResult = totalTasks
   .map(i => i.duration/ 60)
   .filter(i => i >= 2)
   .map(i => i * payHourRate)
-  .reduce((total, currentValue) => total + currentValue)
+  .reduce((total, currentValue) => total + currentValue) // prints 160
   .toFixed(2)
 
-  console.log(finalResult);
+  console.log(finalResult); // prints 160.00
