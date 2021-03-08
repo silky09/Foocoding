@@ -55,18 +55,19 @@ const tuesday = [
 
 // const payHourRate = 20;
 
-// // other way to use "concat" method
-// // The concat() method is used to join two or more arrays.
+// other way to use "concat" method
+// The concat() method is used to join two or more arrays.
 
-// //const totalTasks = monday.concat(tuesday);
+//const totalTasks = monday.concat(tuesday);
  
-// // 1. Map the tasks to durations in hours.
+// 1. Map the tasks to durations in hours.
 
 // let durationInHour = totalTasks.map(i => i.duration / 60);
 // console.log(durationInHour);
   
 
-// // 2.  Filter out everything that took less than two hours(i.e., remove from the collection)
+// 2.  Filter out everything that took less than two hours(i.e., remove from the collection)
+
 // let moreThanTwoHours = durationInHour.filter(i => i >= 2);
 // console.log(moreThanTwoHours); // prints  [3, 2, 3]
 
@@ -77,7 +78,7 @@ const tuesday = [
 // console.log(multiplyDuration); // [60, 40, 60]
 
 
-// // 4.  Output a formatted Euro amount, rounded to Euro cents, e.g: €11.34.
+// 4.  Output a formatted Euro amount, rounded to Euro cents, e.g: €11.34.
 
  
 // let totalSumUp = multiplyDuration.reduce((total, currentValue) => total + currentValue);
