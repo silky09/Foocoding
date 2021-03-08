@@ -1,6 +1,17 @@
 /**
- * 1.1 Say you would like to write a program that doubles the odd numbers in an array and throws away the even numbers.
+ * 1.1 Say you would like to write a program that doubles the odd numbers
+ *  in an array and throws away the even numbers.
+ */
+ const myNumbers = [1, 2, 3, 4];
 
+ let doublesOddNumbers = myNumbers
+   .filter(number => number % 2 !== 0)
+   .map(number => number * 2)
+ 
+   console.log(doublesOddNumbers); // prints [2, 6]
+
+
+/*
 Your solution could be something like this:
 
 function doubleOddNumbers(numbers) {
@@ -20,20 +31,20 @@ Rewrite the above doubleOddNumbers function using map and filter;
 don't forget to use =>.
  */
 
-const myNumbers = [1, 2, 3, 4];
+// const myNumbers = [1, 2, 3, 4];
 
-const OddNumbers = myNumbers.filter(function (number) {
-  return (number % 2 === 1);
+// const OddNumbers = myNumbers.filter(function (number) {
+//   return (number % 2 !== 0);
 
-});
-console.log("The odd numbers are: ", OddNumbers); // returns  [ 1, 3 ]
+// });
+// console.log("The odd numbers are: ", OddNumbers); // returns  [ 1, 3 ]
 
-const doubleOddNumber = OddNumbers.map(function (number) {
-  return number * 2 ;
+// const doubleOddNumber = OddNumbers.map(function (number) {
+//   return number * 2 ;
 
-});
+// });
 
-console.log("The doubled numbers are: ",  doubleOddNumber); // returns [ 2, 6 ]
+// console.log("The doubled numbers are: ",  doubleOddNumber); // returns [ 2, 6 ]
 
 // other 2nd method::------------------------------------------------->>
 
