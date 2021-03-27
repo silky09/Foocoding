@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <div>
       <footer>
-        <p>Created by {myName} with ☕ and 🧡</p>
+        <p>Created by {myName} with ☕️ and ❤️ </p>
         <p>Copyright © {month} {currentYear}</p>
       </footer>
     </div>
